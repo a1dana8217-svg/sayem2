@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Statistics</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8ff;
+    padding: 12px;
+}
+
+.stats-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(5px, 1.5vw, 18px);
+}
+
+.stat-box {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(4px, 1vw, 14px);
+
+    padding: clamp(8px, 2vw, 22px) 5px;
+    border-radius: clamp(12px, 2vw, 25px);
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #eaf2ff 100%
+    );
+
+    border: 1px solid #ffffff;
+
+    box-shadow:
+        5px 5px 12px rgba(45, 70, 110, 0.18),
+        -4px -4px 10px rgba(255, 255, 255, 0.95),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.9),
+        inset -1px -1px 2px rgba(100, 130, 180, 0.12);
+
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.stat-box:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        7px 9px 18px rgba(45, 70, 110, 0.23),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.9);
+}
+
+.icon {
+    width: clamp(30px, 5vw, 65px);
+    height: clamp(30px, 5vw, 65px);
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(16px, 3vw, 32px);
+    color: white;
+    border-radius: 50%;
+
+    box-shadow:
+        4px 4px 8px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+        inset -3px -3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.green {
+    background: linear-gradient(135deg, #00c875, #a8d900);
+}
+
+.blue {
+    background: linear-gradient(135deg, #479cff, #0845c5);
+}
+
+.purple {
+    background: linear-gradient(135deg, #00c9d8, #075d91);
+}
+
+.info {
+    min-width: 0;
+    text-align: left;
+}
+
+.info h2 {
+    color: #123777;
+    font-size: clamp(15px, 2.5vw, 34px);
+    line-height: 1.2;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.info p {
+    color: #57749b;
+    font-size: clamp(8px, 1.25vw, 16px);
+    font-weight: bold;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* Keep all 3 boxes in one row on every device */
+@media (max-width: 480px) {
+    body {
+        padding: 6px;
+    }
+
+    .stats-container {
+        gap: 5px;
+    }
+
+    .stat-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+        padding: 9px 2px;
+        border-radius: 12px;
+    }
+
+    .info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .info h2 {
+        font-size: clamp(13px, 4vw, 19px);
+        margin-bottom: 3px;
+    }
+
+    .info p {
+        font-size: clamp(7px, 2.3vw, 11px);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stats-container">
+
+    <div class="stat-box">
+        <div class="icon green">🏆</div>
+        <div class="info">
+            <h2>5+</h2>
+            <p>Years Experience</p>
+        </div>
+    </div>
+
+    <div class="stat-box">
+        <div class="icon blue">👨‍👩‍👧</div>
+        <div class="info">
+            <h2>250+</h2>
+            <p>Total Students</p>
+        </div>
+    </div>
+
+    <div class="stat-box">
+        <div class="icon purple">🎓</div>
+        <div class="info">
+            <h2>10+</h2>
+            <p>Teachers</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+  </html>
